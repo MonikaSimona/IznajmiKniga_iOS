@@ -1,24 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--RegistracijaNajava-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="RegistracijaNajava" id="BYZ-38-t0r" customClass="ViewController" customModule="IznajmiKniga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ИЗНАЈМИ КНИГА" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm1-pl-ssk">
+                                <rect key="frame" x="37.5" y="45" width="245" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" red="0.40428201870000002" green="0.24775892059999999" blue="0.64758743519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="________________________________________" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BY-tm-4BP">
+                                <rect key="frame" x="15" y="64.5" width="290" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.46495378521126762" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Внеси email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-Ne-jA9">
+                                <rect key="frame" x="10" y="154.5" width="300" height="30"/>
+                                <color key="textColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Внеси лозинка" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Haz-M5-8fm">
+                                <rect key="frame" x="10" y="192.5" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Апликација за изнајмување книги" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ip9-6s-rbz">
+                                <rect key="frame" x="25" y="93.5" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59850902288732399" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрирај се како:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJH-pJ-Drq">
+                                <rect key="frame" x="78" y="346.5" width="164.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59850902289999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9l-Mj-9St">
+                                <rect key="frame" x="50" y="374.5" width="66" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Читател">
+                                    <color key="titleColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czb-dG-vsN">
+                                <rect key="frame" x="160" y="374.5" width="110" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Библиотекар">
+                                    <color key="titleColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Внеси Име и Презиме" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spj-XB-DYw">
+                                <rect key="frame" x="10" y="424" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Внеси телефонски број" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGG-NI-vnq">
+                                <rect key="frame" x="10" y="462" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="______________" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agr-IH-BNw">
+                                <rect key="frame" x="109" y="306.5" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.46495378520000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVb-5s-Zh4">
+                                <rect key="frame" x="106" y="238.5" width="108" height="38"/>
+                                <color key="backgroundColor" red="0.58446134520306758" green="0.62609191231159356" blue="0.37285682865492759" alpha="0.53545884683098588" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <state key="normal" title=" Најави Се ">
+                                    <color key="titleColor" red="0.56667196750640869" green="0.1786922812461853" blue="0.12700855731964111" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.1725235252" green="0.18660945600000001" blue="0.11032179809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="topButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O2h-ZU-yPr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuc-TM-XSV">
+                                <rect key="frame" x="52" y="288.5" width="216" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <state key="normal" title="Премини кон Регистрација">
+                                    <color key="titleColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="bottomButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sds-gV-Eer"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92451652229037362" green="1" blue="0.59119082429176228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HVb-5s-Zh4" firstAttribute="top" secondItem="Haz-M5-8fm" secondAttribute="bottom" constant="16" id="4tg-OD-uCx"/>
+                            <constraint firstItem="gGG-NI-vnq" firstAttribute="top" secondItem="Spj-XB-DYw" secondAttribute="bottom" constant="8" id="4ti-uR-VJm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uhG-Ne-jA9" secondAttribute="trailing" constant="10" id="BN2-gD-QGh"/>
+                            <constraint firstItem="Xm1-pl-ssk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="D9U-VW-wXt"/>
+                            <constraint firstItem="HVb-5s-Zh4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DpO-Rz-rKk"/>
+                            <constraint firstItem="nJH-pJ-Drq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ev6-RR-y3C"/>
+                            <constraint firstItem="Spj-XB-DYw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="HK7-mf-WGY"/>
+                            <constraint firstItem="2BY-tm-4BP" firstAttribute="top" secondItem="Xm1-pl-ssk" secondAttribute="bottom" constant="-19.5" id="Tbu-WP-Z0F"/>
+                            <constraint firstItem="zuc-TM-XSV" firstAttribute="top" secondItem="HVb-5s-Zh4" secondAttribute="bottom" constant="12" id="X4g-x3-jPv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gGG-NI-vnq" secondAttribute="trailing" constant="10" id="Xbg-1M-tkh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="czb-dG-vsN" secondAttribute="trailing" constant="50" id="ZBw-jt-Sxp"/>
+                            <constraint firstItem="ip9-6s-rbz" firstAttribute="top" secondItem="2BY-tm-4BP" secondAttribute="bottom" constant="8" id="ZQ1-C8-ioM"/>
+                            <constraint firstItem="Haz-M5-8fm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="aY6-Bq-dfW"/>
+                            <constraint firstItem="agr-IH-BNw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cKx-Ib-NLg"/>
+                            <constraint firstItem="agr-IH-BNw" firstAttribute="top" secondItem="zuc-TM-XSV" secondAttribute="bottom" constant="-15" id="dH4-vm-ubB"/>
+                            <constraint firstItem="Xm1-pl-ssk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eR5-Cb-zVL"/>
+                            <constraint firstItem="uhG-Ne-jA9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="edq-18-Oc2"/>
+                            <constraint firstItem="gGG-NI-vnq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="fHg-HJ-o5G"/>
+                            <constraint firstItem="ip9-6s-rbz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hRQ-4h-FyN"/>
+                            <constraint firstItem="M9l-Mj-9St" firstAttribute="top" secondItem="nJH-pJ-Drq" secondAttribute="bottom" constant="7" id="hdk-12-kko"/>
+                            <constraint firstItem="nJH-pJ-Drq" firstAttribute="top" secondItem="agr-IH-BNw" secondAttribute="bottom" constant="19" id="hjS-iV-HYK"/>
+                            <constraint firstItem="2BY-tm-4BP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i4o-Gg-ujM"/>
+                            <constraint firstItem="uhG-Ne-jA9" firstAttribute="top" secondItem="ip9-6s-rbz" secondAttribute="bottom" constant="40" id="kE1-hE-tvn"/>
+                            <constraint firstItem="Haz-M5-8fm" firstAttribute="top" secondItem="uhG-Ne-jA9" secondAttribute="bottom" constant="8" id="kpf-a3-yLx"/>
+                            <constraint firstItem="zuc-TM-XSV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kzk-AV-uXc"/>
+                            <constraint firstItem="czb-dG-vsN" firstAttribute="top" secondItem="nJH-pJ-Drq" secondAttribute="bottom" constant="7" id="nVv-7A-i37"/>
+                            <constraint firstItem="Spj-XB-DYw" firstAttribute="top" secondItem="M9l-Mj-9St" secondAttribute="bottom" constant="16.5" id="oiL-tz-D7z"/>
+                            <constraint firstItem="M9l-Mj-9St" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="uNu-sm-h6x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Spj-XB-DYw" secondAttribute="trailing" constant="10" id="xPE-fj-Ft1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Haz-M5-8fm" secondAttribute="trailing" constant="10" id="zZN-fZ-MsF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bibliotekarButton" destination="czb-dG-vsN" id="W38-K7-ahr"/>
+                        <outlet property="bottomButton" destination="zuc-TM-XSV" id="EYB-D2-pWr"/>
+                        <outlet property="citatelButton" destination="M9l-Mj-9St" id="1sQ-RH-Sxl"/>
+                        <outlet property="emailTextField" destination="uhG-Ne-jA9" id="bpg-lg-W96"/>
+                        <outlet property="label" destination="nJH-pJ-Drq" id="Bwc-Pa-n9d"/>
+                        <outlet property="nameTextField" destination="Spj-XB-DYw" id="TLY-VD-BkD"/>
+                        <outlet property="passwordTextField" destination="Haz-M5-8fm" id="REZ-pl-WXL"/>
+                        <outlet property="phoneTextField" destination="gGG-NI-vnq" id="D4U-ed-OMg"/>
+                        <outlet property="separatorLine" destination="agr-IH-BNw" id="HdQ-u0-eN2"/>
+                        <outlet property="topButton" destination="HVb-5s-Zh4" id="kYp-BK-qHc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-439" y="95"/>
         </scene>
     </scenes>
 </document>
