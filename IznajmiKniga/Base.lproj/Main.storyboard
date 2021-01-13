@@ -60,6 +60,9 @@
                                 <state key="normal" title="Читател">
                                     <color key="titleColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="citatelPIcked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eth-IZ-9q4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czb-dG-vsN">
                                 <rect key="frame" x="160" y="374.5" width="110" height="34"/>
@@ -67,6 +70,9 @@
                                 <state key="normal" title="Библиотекар">
                                     <color key="titleColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="bibliotekarPicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tg0-r3-uOT"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Внеси Име и Презиме" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spj-XB-DYw">
                                 <rect key="frame" x="10" y="424" width="300" height="30"/>

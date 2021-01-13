@@ -22,11 +22,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var topButton: UIButton!
     var voNajava = true
-    var tipKorisnik = ""
+    var tipKorisnik = "pocetok"
     
 //    var alert = Alert()
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(tipKorisnik)
         topButton.layer.cornerRadius = 5
         
         separatorLine.isHidden = true
@@ -36,6 +37,8 @@ class ViewController: UIViewController {
         nameTextField.isHidden = true
         phoneTextField.isHidden = true
     }
+    
+    
 
 
     @IBAction func topButtonPressed(_ sender: Any) {
@@ -93,6 +96,18 @@ class ViewController: UIViewController {
             nameTextField.isHidden = true
             phoneTextField.isHidden = true
         }
+    }
+    
+    
+    @IBAction func citatelPIcked(_ sender: Any) {
+        tipKorisnik = "citatel"
+        print(tipKorisnik)
+    }
+    
+    @IBAction func bibliotekarPicked(_ sender: Any) {
+        tipKorisnik = "bibliotekar"
+        
+        print(tipKorisnikt)
     }
     
     func displayAlert(title: String, message: String){
