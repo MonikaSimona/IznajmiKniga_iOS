@@ -13,6 +13,8 @@
 		F42FBFD025ADAACE00106681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42FBFCE25ADAACE00106681 /* Main.storyboard */; };
 		F42FBFD225ADAADE00106681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F42FBFD125ADAADE00106681 /* Assets.xcassets */; };
 		F42FBFD525ADAADE00106681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42FBFD325ADAADE00106681 /* LaunchScreen.storyboard */; };
+		F42FBFE725B05C0200106681 /* IznajmuvanjaBibliotekarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FBFE625B05C0200106681 /* IznajmuvanjaBibliotekarTableViewController.swift */; };
+		F42FBFE925B05C8F00106681 /* ProfilCitatelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FBFE825B05C8F00106681 /* ProfilCitatelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		F42FBFD125ADAADE00106681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F42FBFD425ADAADE00106681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F42FBFD625ADAADF00106681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F42FBFE625B05C0200106681 /* IznajmuvanjaBibliotekarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IznajmuvanjaBibliotekarTableViewController.swift; sourceTree = "<group>"; };
+		F42FBFE825B05C8F00106681 /* ProfilCitatelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilCitatelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +82,11 @@
 		F42FBFC925ADAACE00106681 /* IznajmiKniga */ = {
 			isa = PBXGroup;
 			children = (
+				F42FBFE825B05C8F00106681 /* ProfilCitatelViewController.swift */,
 				F42FBFCA25ADAACE00106681 /* AppDelegate.swift */,
 				F42FBFCC25ADAACE00106681 /* ViewController.swift */,
 				F42FBFCE25ADAACE00106681 /* Main.storyboard */,
+				F42FBFE625B05C0200106681 /* IznajmuvanjaBibliotekarTableViewController.swift */,
 				F42FBFD125ADAADE00106681 /* Assets.xcassets */,
 				F42FBFD325ADAADE00106681 /* LaunchScreen.storyboard */,
 				F42FBFD625ADAADF00106681 /* Info.plist */,
@@ -204,7 +210,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F42FBFCD25ADAACE00106681 /* ViewController.swift in Sources */,
+				F42FBFE725B05C0200106681 /* IznajmuvanjaBibliotekarTableViewController.swift in Sources */,
 				F42FBFCB25ADAACE00106681 /* AppDelegate.swift in Sources */,
+				F42FBFE925B05C8F00106681 /* ProfilCitatelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

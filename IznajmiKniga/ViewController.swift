@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 
 class ViewController: UIViewController {
@@ -49,6 +50,32 @@ class ViewController: UIViewController {
                 displayAlert(title: "Грешка при Најава", message: "Треба да внесете и емаил и лозинка")
                 
             }else{
+                //se najavuva citatel ili bibliotekar
+                let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                activityIndicator.center = view.center
+                activityIndicator.hidesWhenStopped = true
+                activityIndicator.style = UIActivityIndicatorView.Style.gray
+                view.addSubview(activityIndicator)
+                UIApplication.shared.beginIgnoringInteractionEvents()
+                
+                PFUser.logInWithUsername(inBackground: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+                    activityIndicator.stopAnimating()
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    if let err = error {
+                        let errorString = err.localizedDescription
+                        self.displayAlert(title: "Грешка при Најава", message: errorString)
+                    }else{
+                        if user!["type"] as! String == "citatel"{
+                            print("Uspesna najava -  citatel")
+                            self.performSegue(withIdentifier: "citatelSegue", sender: self)
+                        }else{
+                            print("Upesna najava - bibliotekar")
+                             self.performSegue(withIdentifier: "bibliotekarSegue", sender: self)
+                        }
+                    }
+                }
+                
+        
                 
             }
         }else{
@@ -61,7 +88,57 @@ class ViewController: UIViewController {
                 displayAlert(title: "Грешка при Регистрација", message: "Треба да ги пополните сите полиња и да одберете тип на корисник")
                 
             }else{
-                
+                let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                activityIndicator.center = view.center
+                activityIndicator.hidesWhenStopped = true
+                activityIndicator.style = UIActivityIndicatorView.Style.gray
+                view.addSubview(activityIndicator)
+                UIApplication.shared.beginIgnoringInteractionEvents()
+                // se registrira citatel ili bibliotekar
+                if tipKorisnik == "citatel" {
+                    //se registrira citatel
+                    let user = PFUser()
+                    user.username = emailTextField.text! + "_citatel"
+                    user.password = passwordTextField.text
+                    user.email = emailTextField.text
+                    user["name"] = nameTextField.text
+                    user["phone"] = phoneTextField.text
+                    user["type"] = tipKorisnik
+                    
+                    user.signUpInBackground { (success, error) in
+                        activityIndicator.stopAnimating()
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        if let err = error {
+                            let errorStirng = err.localizedDescription
+                            self.displayAlert(title: "Грешка при регистрација", message: errorStirng)
+                        }else{
+                            print("Uspesna registracija - citatel")
+                            self.performSegue(withIdentifier: "citatelSegue", sender: self)
+                        }
+                    }
+                    
+                }else{
+                    // se registrira bibliotekar
+                    let user = PFUser()
+                    user.username = emailTextField.text! + "_bibliotekar"
+                    user.password = passwordTextField.text
+                    user.email = emailTextField.text
+                    user["name"] = nameTextField.text
+                    user["phone"] = phoneTextField.text
+                    user["type"] = tipKorisnik
+                    
+                    user.signUpInBackground { (success, error) in
+                        activityIndicator.stopAnimating()
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        if let err = error {
+                            let errorStirng = err.localizedDescription
+                            self.displayAlert(title: "Грешка при регистрација", message: errorStirng)
+                        }else{
+                            print("Uspesna registracija - bibliotekar")
+                            self.performSegue(withIdentifier: "bibliotekarSegue", sender: self)
+                        }
+                    }
+                }
             }
         }
        
@@ -99,15 +176,16 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func citatelPIcked(_ sender: Any) {
+    @IBAction func citatelPIcked(_ sender: UIButton) {
         tipKorisnik = "citatel"
+        sender.setTitleColor(UIColor.lightGray, for: .normal)
         print(tipKorisnik)
     }
     
-    @IBAction func bibliotekarPicked(_ sender: Any) {
+    @IBAction func bibliotekarPicked(_ sender: UIButton) {
         tipKorisnik = "bibliotekar"
-        
-        print(tipKorisnikt)
+        sender.setTitleColor(UIColor.lightGray, for: .normal)
+        print(tipKorisnik)
     }
     
     func displayAlert(title: String, message: String){
