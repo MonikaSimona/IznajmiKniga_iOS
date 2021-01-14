@@ -45,24 +45,42 @@ class ProfilCitatelViewController: UIViewController {
                 }else{
                     if let citatel = user as? PFUser{
                         if self.newNameTextField.text != ""{
+                            print(citatel["name"] as! String)
                             citatel["name"] = self.newNameTextField.text
                         }
                         if self.newEmailTextField.text != ""{
-                            citatel.email = self.newEmailTextField.text
+                            citatel.username = "\(self.newEmailTextField.text ?? "")_citatel"
+                            
                         }
                         if self.newPhoneTextField.text != ""{
                             citatel["phone"] = self.newPhoneTextField.text
+                            
                         }
                         if self.newPasswordTextField.text != ""{
                             citatel.password = self.newPasswordTextField.text
+                           
                         }
+                         citatel.saveInBackground()
                     }
                 }
             })
             
-            nameLabel.text = newNameTextField.text
-            emailLabel.text = newEmailTextField.text
-            phoneLabel.text = newPasswordTextField.text
+            if newNameTextField.text != ""{
+                nameLabel.text = newNameTextField.text
+            }
+            if newEmailTextField.text != "" {
+                emailLabel.text = newEmailTextField.text
+            }
+            if newPhoneTextField.text != ""{
+                phoneLabel.text = newEmailTextField.text
+            }
+            
+            if newPasswordTextField.text != "" {
+                
+                displayAlert(title:"Промена на податоци", message: "Успешно променета лозинка")
+            }
+            
+            
             
             
             newNameTextField.text = ""
