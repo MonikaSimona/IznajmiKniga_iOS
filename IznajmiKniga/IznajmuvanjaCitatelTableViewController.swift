@@ -1,15 +1,14 @@
 //
-//  IznajmuvanjaBibliotekarTableViewController.swift
+//  IznajmuvanjaCitatelTableViewController.swift
 //  IznajmiKniga
 //
-//  Created by simona on 1/14/21.
+//  Created by simona on 1/15/21.
 //  Copyright © 2021 simona. All rights reserved.
 //
 
 import UIKit
-import Parse
 
-class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
+class IznajmuvanjaCitatelTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +19,12 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-  
-    
-    
-    @IBAction func odjaviSe(_ sender: Any) {
-        PFUser.logOut()
-        navigationController?.dismiss(animated: true, completion: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        let myBackButton = UIBarButtonItem()
+        myBackButton.title = "Назад"
+        navigationItem.backBarButtonItem = myBackButton
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,8 +41,8 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-//         cell.textLabel?.text = "Ime \(indexPath.row)"
-//        cell.detailTextLabel?.text = "datum"
+        cell.textLabel?.text = "Naslov  \(indexPath.row)"
+        cell.detailTextLabel?.text = "datum"
 
         return cell
     }

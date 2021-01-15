@@ -20,6 +20,7 @@ class ProfilCitatelViewController: UIViewController {
     @IBOutlet weak var newPasswordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         let user = PFUser.current()
         nameLabel.text = user!["name"] as? String
         emailLabel.text = user?.email
@@ -37,33 +38,31 @@ class ProfilCitatelViewController: UIViewController {
             print("site polinja se prazni")
             displayAlert(title: "Грешка при промена на податоци", message: "Внесете поле за промена!")
         }else{
-            let query = PFUser.query()
-            query?.whereKey("objectId", equalTo: PFUser.current()?.objectId ?? "")
-            query?.getFirstObjectInBackground(block: { (user, error) in
-                if let err = error{
-                    print(err.localizedDescription)
-                }else{
-                    if let citatel = user as? PFUser{
-                        if self.newNameTextField.text != ""{
-                            print(citatel["name"] as! String)
-                            citatel["name"] = self.newNameTextField.text
-                        }
-                        if self.newEmailTextField.text != ""{
-                            citatel.username = "\(self.newEmailTextField.text ?? "")_citatel"
-                            
-                        }
-                        if self.newPhoneTextField.text != ""{
-                            citatel["phone"] = self.newPhoneTextField.text
-                            
-                        }
-                        if self.newPasswordTextField.text != ""{
-                            citatel.password = self.newPasswordTextField.text
-                           
-                        }
-                         citatel.saveInBackground()
-                    }
+            
+            let citatel = PFUser.current()
+            if citatel != nil {
+//                print(citatel?.username ?? "")
+//                print(citatel!["name"] as! String)
+                if self.newNameTextField.text != ""{
+                   
+                    citatel!["name"] = self.newNameTextField.text
                 }
-            })
+                if self.newEmailTextField.text != ""{
+                    citatel?.username = "\(self.newEmailTextField.text ?? "")_citatel"
+                    citatel?.email = self.newEmailTextField.text
+                }
+                if self.newPhoneTextField.text != ""{
+                    citatel!["phone"] = self.newPhoneTextField.text
+                    
+                }
+                if self.newPasswordTextField.text != ""{
+                    citatel?.password = self.newPasswordTextField.text
+                    
+                }
+            }
+            citatel?.saveInBackground()
+            
+        
             
             if newNameTextField.text != ""{
                 nameLabel.text = newNameTextField.text
