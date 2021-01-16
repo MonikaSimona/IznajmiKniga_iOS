@@ -91,6 +91,7 @@ class ProfilCitatelViewController: UIViewController {
         
     }
     @IBAction func konIznajmuvanja(_ sender: Any) {
+        performSegue(withIdentifier: "moiIznajmuvanja", sender: self)
     }
     @IBAction func konKnigi(_ sender: Any) {
     }

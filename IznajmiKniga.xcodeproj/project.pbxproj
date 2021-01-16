@@ -11,6 +11,8 @@
 		F4129F8725B1AF9800A11189 /* KnigiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8625B1AF9800A11189 /* KnigiCollectionViewController.swift */; };
 		F4129F8925B1B4BC00A11189 /* IznajmuvanjaCitatelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8825B1B4BC00A11189 /* IznajmuvanjaCitatelTableViewController.swift */; };
 		F4129F8B25B1B82B00A11189 /* DetaliZaKnigaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8A25B1B82B00A11189 /* DetaliZaKnigaViewController.swift */; };
+		F4129F8D25B3044E00A11189 /* DodadiKnigaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8C25B3044E00A11189 /* DodadiKnigaViewController.swift */; };
+		F4129F8F25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8E25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift */; };
 		F42FBFCB25ADAACE00106681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FBFCA25ADAACE00106681 /* AppDelegate.swift */; };
 		F42FBFCD25ADAACE00106681 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FBFCC25ADAACE00106681 /* ViewController.swift */; };
 		F42FBFD025ADAACE00106681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42FBFCE25ADAACE00106681 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		F4129F8625B1AF9800A11189 /* KnigiCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnigiCollectionViewController.swift; sourceTree = "<group>"; };
 		F4129F8825B1B4BC00A11189 /* IznajmuvanjaCitatelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IznajmuvanjaCitatelTableViewController.swift; sourceTree = "<group>"; };
 		F4129F8A25B1B82B00A11189 /* DetaliZaKnigaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaliZaKnigaViewController.swift; sourceTree = "<group>"; };
+		F4129F8C25B3044E00A11189 /* DodadiKnigaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DodadiKnigaViewController.swift; sourceTree = "<group>"; };
+		F4129F8E25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaliZaIznajmuvanjeViewController.swift; sourceTree = "<group>"; };
 		F42FBFC725ADAACE00106681 /* IznajmiKniga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IznajmiKniga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42FBFCA25ADAACE00106681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F42FBFCC25ADAACE00106681 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				F42FBFCA25ADAACE00106681 /* AppDelegate.swift */,
 				F42FBFCC25ADAACE00106681 /* ViewController.swift */,
 				F42FBFCE25ADAACE00106681 /* Main.storyboard */,
+				F4129F8C25B3044E00A11189 /* DodadiKnigaViewController.swift */,
+				F4129F8E25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift */,
 				F4129F8625B1AF9800A11189 /* KnigiCollectionViewController.swift */,
 				F42FBFE625B05C0200106681 /* IznajmuvanjaBibliotekarTableViewController.swift */,
 				F4129F8825B1B4BC00A11189 /* IznajmuvanjaCitatelTableViewController.swift */,
@@ -218,7 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4129F8D25B3044E00A11189 /* DodadiKnigaViewController.swift in Sources */,
 				F4129F8725B1AF9800A11189 /* KnigiCollectionViewController.swift in Sources */,
+				F4129F8F25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift in Sources */,
 				F42FBFCD25ADAACE00106681 /* ViewController.swift in Sources */,
 				F42FBFE725B05C0200106681 /* IznajmuvanjaBibliotekarTableViewController.swift in Sources */,
 				F4129F8B25B1B82B00A11189 /* DetaliZaKnigaViewController.swift in Sources */,
