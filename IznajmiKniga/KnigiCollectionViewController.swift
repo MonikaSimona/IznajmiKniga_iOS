@@ -57,10 +57,12 @@ class KnigiCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         cell.backgroundView?.backgroundColor = UIColor.green
+        cell.contentView.backgroundColor = UIColor.green
         
     
         return cell
     }
+  
 
     // MARK: UICollectionViewDelegate
 

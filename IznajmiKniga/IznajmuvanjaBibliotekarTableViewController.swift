@@ -21,6 +21,8 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
   
+    @IBAction func dodadiKnigaNavigation(_ sender: Any) {
+    }
     
     
     @IBAction func odjaviSe(_ sender: Any) {
@@ -44,11 +46,23 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-//         cell.textLabel?.text = "Ime \(indexPath.row)"
-//        cell.detailTextLabel?.text = "datum"
+         cell.textLabel?.text = "Ime \(indexPath.row)"
+        cell.detailTextLabel?.text = "datum"
 
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detaliZaIznajmuvanje" {
+            if let index  = tableView.indexPathForSelectedRow?.row{
+                let detaliIznajmuvanje = segue.destination as! DetaliZaIznajmuvanjeViewController
+                detaliIznajmuvanje.index = index
+                
+                
+            }
+        }
+    }
+   
  
 
     /*
@@ -97,3 +111,4 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
     */
 
 }
+

@@ -367,7 +367,7 @@
                         <color key="tintColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.92451652230000003" green="1" blue="0.59119082430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="stO-Du-aNW" detailTextLabel="CTq-Uc-t3o" style="IBUITableViewCellStyleSubtitle" id="Id5-TN-eZN" customClass="cell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="stO-Du-aNW" detailTextLabel="CTq-Uc-t3o" style="IBUITableViewCellStyleSubtitle" id="Id5-TN-eZN">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Id5-TN-eZN" id="Hft-J9-eQ9">
@@ -580,9 +580,8 @@
                         <color key="backgroundColor" red="0.92701745030000005" green="0.98882669209999996" blue="0.59432441000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.92451652230000003" green="1" blue="0.59119082430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.92451652230000003" green="1" blue="0.59119082430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="uRE-sN-KCf" detailTextLabel="qis-FZ-1JU" style="IBUITableViewCellStyleSubtitle" id="zYr-It-6cu" customClass="cell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="uRE-sN-KCf" detailTextLabel="qis-FZ-1JU" style="IBUITableViewCellStyleSubtitle" id="zYr-It-6cu">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zYr-It-6cu" id="tYl-hm-fNl">
@@ -625,7 +624,8 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Додади книга" id="zs3-g6-vDJ">
                             <connections>
-                                <segue destination="uNJ-8a-Hz3" kind="show" id="rCd-39-ikL"/>
+                                <action selector="dodadiKnigaNavigation:" destination="83m-wP-c2M" id="oVg-oo-9ns"/>
+                                <segue destination="uNJ-8a-Hz3" kind="show" identifier="dodaiKniga" id="rCd-39-ikL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

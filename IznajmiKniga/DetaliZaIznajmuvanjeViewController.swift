@@ -18,10 +18,10 @@ class DetaliZaIznajmuvanjeViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    
+    var index:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("index \(index)")
         // Do any additional setup after loading the view.
     }
     
