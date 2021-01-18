@@ -818,7 +818,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmr-Kp-ZbO">
-                                <rect key="frame" x="149" y="74" width="161" height="32"/>
+                                <rect key="frame" x="149" y="64" width="161" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Види ги сите книги &gt;"/>
                                 <connections>
@@ -826,52 +826,40 @@
                                     <segue destination="YND-va-qoD" kind="show" identifier="vidiGiSiteKnigi" id="QMV-Pl-Ueh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="__________________" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgc-5J-d7X">
-                                <rect key="frame" x="94.5" y="100" width="131" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.46495378520000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bVi-YW-d9J">
-                                <rect key="frame" x="5" y="129" width="310" height="159"/>
-                                <color key="backgroundColor" red="0.58446134520000004" green="0.62609191230000005" blue="0.37285682869999998" alpha="0.5354588468" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="bVi-YW-d9J" secondAttribute="height" multiplier="310:159" id="0X4-W6-8Kp"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NS5-XU-Bzl">
-                                <rect key="frame" x="105" y="293" width="110" height="32"/>
+                                <rect key="frame" x="105" y="304" width="110" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="Одбери слика"/>
                                 <connections>
+                                    <action selector="odberiSlika:" destination="mfp-zr-o7G" eventType="touchUpInside" id="Awu-SG-G9l"/>
                                     <action selector="odberiSlika:" destination="uNJ-8a-Hz3" eventType="touchUpInside" id="qdO-vn-ofb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Внеси Наслов на книга" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g4G-aT-1gL">
-                                <rect key="frame" x="10" y="330" width="300" height="30"/>
+                                <rect key="frame" x="10" y="341" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Внеси Автор на книга" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cb3-jp-xPL">
-                                <rect key="frame" x="10" y="368" width="300" height="30"/>
+                                <rect key="frame" x="10" y="379" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Внеси содржина" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="75g-Fe-kUu">
-                                <rect key="frame" x="10" y="406" width="300" height="100"/>
+                                <rect key="frame" x="10" y="417" width="300" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="BA9-sM-iHi"/>
                                     <constraint firstAttribute="width" secondItem="75g-Fe-kUu" secondAttribute="height" multiplier="3:1" id="Yl5-v9-JIL"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.2528658143095891" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki8-O8-oug">
-                                <rect key="frame" x="98" y="521" width="124" height="33"/>
+                                <rect key="frame" x="98" y="527" width="124" height="33"/>
                                 <color key="backgroundColor" red="0.58446134520000004" green="0.62609191230000005" blue="0.37285682869999998" alpha="0.5354588468" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <state key="normal" title=" Додади Книга "/>
@@ -879,49 +867,56 @@
                                     <action selector="dodadiKniga:" destination="uNJ-8a-Hz3" eventType="touchUpInside" id="kw0-0A-I9w"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bVi-YW-d9J">
+                                <rect key="frame" x="80" y="99" width="160" height="200"/>
+                                <color key="backgroundColor" red="0.58446134520000004" green="0.62609191230000005" blue="0.37285682869999998" alpha="0.5354588468" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bVi-YW-d9J" secondAttribute="height" multiplier="8:10" id="ZCE-99-G39"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.92701745030000005" green="0.98882669209999996" blue="0.59432441000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="O5Z-Tr-3j7" firstAttribute="trailing" secondItem="bVi-YW-d9J" secondAttribute="trailing" constant="5" id="2pF-H5-YpY"/>
-                            <constraint firstItem="Ki8-O8-oug" firstAttribute="top" secondItem="75g-Fe-kUu" secondAttribute="bottom" constant="15" id="6GQ-Wm-hoM"/>
+                            <constraint firstItem="Ki8-O8-oug" firstAttribute="top" secondItem="75g-Fe-kUu" secondAttribute="bottom" constant="10" id="6GQ-Wm-hoM"/>
                             <constraint firstItem="g4G-aT-1gL" firstAttribute="top" secondItem="NS5-XU-Bzl" secondAttribute="bottom" constant="5" id="ATJ-7L-l0E"/>
                             <constraint firstItem="NS5-XU-Bzl" firstAttribute="centerX" secondItem="8JI-eS-HQ5" secondAttribute="centerX" id="C3Y-b9-911"/>
                             <constraint firstItem="NS5-XU-Bzl" firstAttribute="top" secondItem="bVi-YW-d9J" secondAttribute="bottom" constant="5" id="CYf-7z-d7e"/>
                             <constraint firstItem="75g-Fe-kUu" firstAttribute="leading" secondItem="O5Z-Tr-3j7" secondAttribute="leading" constant="10" id="F8T-1e-wKH"/>
-                            <constraint firstItem="bVi-YW-d9J" firstAttribute="leading" secondItem="O5Z-Tr-3j7" secondAttribute="leading" constant="5" id="HGV-bB-yHD"/>
+                            <constraint firstItem="bVi-YW-d9J" firstAttribute="leading" secondItem="O5Z-Tr-3j7" secondAttribute="leading" constant="80" id="HGV-bB-yHD"/>
                             <constraint firstItem="O5Z-Tr-3j7" firstAttribute="trailing" secondItem="cb3-jp-xPL" secondAttribute="trailing" constant="10" id="JC4-uA-Q7i"/>
                             <constraint firstItem="cb3-jp-xPL" firstAttribute="leading" secondItem="O5Z-Tr-3j7" secondAttribute="leading" constant="10" id="Jhj-MG-19l"/>
                             <constraint firstItem="g4G-aT-1gL" firstAttribute="leading" secondItem="O5Z-Tr-3j7" secondAttribute="leading" constant="10" id="Ldp-ou-zVQ"/>
+                            <constraint firstItem="bVi-YW-d9J" firstAttribute="top" secondItem="Nmr-Kp-ZbO" secondAttribute="bottom" constant="3" id="Lx4-sr-fHe"/>
                             <constraint firstItem="Ki8-O8-oug" firstAttribute="centerX" secondItem="8JI-eS-HQ5" secondAttribute="centerX" id="ONa-ny-dnl"/>
-                            <constraint firstItem="jgc-5J-d7X" firstAttribute="centerX" secondItem="8JI-eS-HQ5" secondAttribute="centerX" id="RKm-5s-sYd"/>
                             <constraint firstItem="cb3-jp-xPL" firstAttribute="top" secondItem="g4G-aT-1gL" secondAttribute="bottom" constant="8" id="Rf1-X8-VJm"/>
                             <constraint firstAttribute="trailing" secondItem="Nmr-Kp-ZbO" secondAttribute="trailing" constant="10" id="VCT-t6-9hb"/>
                             <constraint firstItem="75g-Fe-kUu" firstAttribute="top" secondItem="cb3-jp-xPL" secondAttribute="bottom" constant="8" id="WOC-dH-M3U"/>
+                            <constraint firstItem="O5Z-Tr-3j7" firstAttribute="trailing" secondItem="bVi-YW-d9J" secondAttribute="trailing" constant="80" id="aiL-gd-aB6"/>
                             <constraint firstItem="cb3-jp-xPL" firstAttribute="centerX" secondItem="8JI-eS-HQ5" secondAttribute="centerX" id="d5l-Lc-6dz"/>
-                            <constraint firstItem="Nmr-Kp-ZbO" firstAttribute="top" secondItem="O5Z-Tr-3j7" secondAttribute="top" constant="10" id="hpo-Ek-d4u"/>
+                            <constraint firstItem="Nmr-Kp-ZbO" firstAttribute="top" secondItem="O5Z-Tr-3j7" secondAttribute="top" id="hpo-Ek-d4u"/>
                             <constraint firstItem="g4G-aT-1gL" firstAttribute="centerX" secondItem="8JI-eS-HQ5" secondAttribute="centerX" id="mNO-4g-1lt"/>
-                            <constraint firstItem="jgc-5J-d7X" firstAttribute="top" secondItem="Nmr-Kp-ZbO" secondAttribute="bottom" constant="-6" id="opx-gE-icJ"/>
                             <constraint firstItem="O5Z-Tr-3j7" firstAttribute="trailing" secondItem="75g-Fe-kUu" secondAttribute="trailing" constant="10" id="q15-iY-DhI"/>
-                            <constraint firstItem="bVi-YW-d9J" firstAttribute="top" secondItem="jgc-5J-d7X" secondAttribute="bottom" constant="8" id="wSG-as-8kF"/>
                             <constraint firstItem="O5Z-Tr-3j7" firstAttribute="trailing" secondItem="g4G-aT-1gL" secondAttribute="trailing" constant="10" id="yWQ-tg-rXM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O5Z-Tr-3j7"/>
                     </view>
                     <connections>
                         <outlet property="avtorTekstField" destination="cb3-jp-xPL" id="whM-Yz-tnf"/>
+                        <outlet property="button" destination="Ki8-O8-oug" id="Uv5-7n-OGX"/>
                         <outlet property="imageView" destination="bVi-YW-d9J" id="g64-qy-9Cs"/>
                         <outlet property="naslovTextField" destination="g4G-aT-1gL" id="ILZ-Lz-LiA"/>
                         <outlet property="sodrzinaTextView" destination="75g-Fe-kUu" id="Y2G-r6-u1R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9tg-4e-hwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mfp-zr-o7G" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="420" y="805.9859154929577"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Lista Naslovi Table View Controller-->
         <scene sceneID="C4h-QR-taw">
             <objects>
-                <tableViewController id="YND-va-qoD" sceneMemberID="viewController">
+                <tableViewController id="YND-va-qoD" customClass="ListaNasloviTableViewController" customModule="IznajmiKniga" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GaY-5t-2XT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

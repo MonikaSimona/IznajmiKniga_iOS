@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class DetaliZaKnigaViewController: UIViewController {
 
     @IBOutlet weak var button: UIButton!
@@ -21,17 +22,17 @@ class DetaliZaKnigaViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        let myBackButton = UIBarButtonItem()
-        myBackButton.title = "Назад"
-        navigationItem.backBarButtonItem = myBackButton
-    }
-    
 
+    
+ 
+   
+    
     @IBAction func iznajmi_vrati(_ sender: Any) {
         if button.titleLabel!.text == "Изнајми"{
             //kod za stavanje kniga vo baza
             //pocnuvanje iznajmuvanje
+            
+            
             print(button.titleLabel!.text!)
             print("iznajmeno")
             button.titleLabel!.text = "Врати"
