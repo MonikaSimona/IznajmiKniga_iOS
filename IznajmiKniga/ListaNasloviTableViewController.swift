@@ -80,7 +80,7 @@ class ListaNasloviTableViewController: UITableViewController {
                 print(err.localizedDescription)
             }else if let knigi = knigi{
                 for kniga in knigi {
-//                    if let kniga = kniga as? PFObject{
+
                         if let naslov = kniga["naslov"] as? String{
                             if let avtor = kniga["avtor"] as? String{
                                 if let objectId = kniga.objectId{
@@ -88,10 +88,9 @@ class ListaNasloviTableViewController: UITableViewController {
                                     self.avtori.append(avtor)
                                     self.objectIds.append(objectId)
                                     self.tableView.reloadData()
-                                }
                             }
                         }
-//                    }
+                    }
                 }
             }
         }

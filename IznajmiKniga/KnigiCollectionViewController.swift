@@ -7,21 +7,20 @@
 //
 
 import UIKit
+import Parse
 
 private let reuseIdentifier = "Cell"
 
-class KnigiCollectionViewController: UICollectionViewController {
+class KnigiCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
+    var naslovi = [String]()
+    var imageFiles = [PFFileObject]()
+    var objectIds = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateCollection()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+  
     }
     override func viewWillAppear(_ animated: Bool) {
         let myBackButton = UIBarButtonItem()
@@ -49,18 +48,83 @@ class KnigiCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 6
+        return naslovi.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! KnigaCollectionViewCell
+        cell.contentView.layer.cornerRadius = 3.0
+        
+        cell.contentView.layer.masksToBounds = true;
+        
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowOffset = CGSize(width:0,height: 2.0)
+        cell.layer.shadowRadius = 3.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false;
+        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+
     
-        // Configure the cell
-        cell.backgroundView?.backgroundColor = UIColor.green
-        cell.contentView.backgroundColor = UIColor.green
+        imageFiles[indexPath.row].getDataInBackground { (data, error) in
+            if let err = error{
+                print(err.localizedDescription)
+            }else if let imageData = data{
+                if let imageToDisplay = UIImage(data: imageData){
+                    cell.knigaImage.image = imageToDisplay
+                }
+            }
+        }
+        cell.naslov.text = naslovi[indexPath.row]
         
     
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let bounds = collectionView.bounds
+        return CGSize(width: bounds.width / 2 - 6, height: bounds.height / 2)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 6
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
+    
+   
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detaliZaKniga" {
+            if let cell = sender as? UICollectionViewCell, let index = collectionView.indexPath(for: cell){
+                let destSeg = segue.destination as! DetaliZaKnigaViewController
+                destSeg.objectId = objectIds[index.row]
+            }
+        }
+    }
+    
+    func updateCollection(){
+        self.naslovi.removeAll()
+        self.imageFiles.removeAll()
+        self.objectIds.removeAll()
+        
+        let knigaQuery = PFQuery(className: "Kniga")
+        knigaQuery.findObjectsInBackground { (objects, error) in
+            if let err = error{
+                print(err.localizedDescription)
+            }else if let knigi = objects{
+                for kniga in knigi{
+                    self.naslovi.append(kniga["naslov"] as! String)
+                    self.imageFiles.append(kniga["imageFile"] as! PFFileObject)
+                    self.objectIds.append(kniga.objectId!)
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+        
     }
   
 

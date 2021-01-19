@@ -16,9 +16,11 @@ class DetaliZaKnigaViewController: UIViewController {
     @IBOutlet weak var avtor: UILabel!
     @IBOutlet weak var naslov: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    var objectId: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
        button.layer.cornerRadius = 5
+        print(objectId)
         
         // Do any additional setup after loading the view.
     }

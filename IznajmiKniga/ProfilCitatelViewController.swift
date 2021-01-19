@@ -27,6 +27,11 @@ class ProfilCitatelViewController: UIViewController {
         phoneLabel.text = user!["phone"] as? String
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        let myBackButton = UIBarButtonItem()
+        myBackButton.title = "Назад"
+        navigationItem.backBarButtonItem = myBackButton
+    }
     
     @IBAction func odjaviSe(_ sender: Any) {
         PFUser.logOut()
