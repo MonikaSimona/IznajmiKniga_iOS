@@ -34,6 +34,11 @@ class DodadiKnigaViewController: UIViewController,UIImagePickerControllerDelegat
         button.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        let myBackButton = UIBarButtonItem()
+        myBackButton.title = "Назад"
+        navigationItem.backBarButtonItem = myBackButton
+    }
     
     @IBAction func konSiteKnigi(_ sender: Any) {
     }
