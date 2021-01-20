@@ -7,20 +7,25 @@
 //
 
 import UIKit
+import Parse
 
 class IznajmuvanjaCitatelTableViewController: UITableViewController {
+    var naslovi = [String]()
+    var objectIds = [String]()
+    var krajniDatumi = [String]()
+    var statusi = [String]()
+    var citatelId: String = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
        
-
+        citatelId = (PFUser.current()?.objectId)!
+        
+        updateTable()
       
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        let myBackButton = UIBarButtonItem()
-//        myBackButton.title = "Назад"
-//        navigationItem.backBarButtonItem = myBackButton
-//    }
+
   
 
     // MARK: - Table view data source
@@ -32,17 +37,66 @@ class IznajmuvanjaCitatelTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return naslovi.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        cell.textLabel?.text = "Naslov  \(indexPath.row)"
-        cell.detailTextLabel?.text = "datum"
+        let status = statusi[indexPath.row]
+        if status == "vrateno"{
+            cell.textLabel?.text = naslovi[indexPath.row]
+            cell.detailTextLabel?.text = "Вратено"
+            cell.detailTextLabel?.textColor = UIColor.init(red: 128, green: 0, blue: 0, alpha: 1)
+            cell.backgroundColor = UIColor.lightGray
+        }else if status == "pominat_rok"{
+            cell.textLabel?.text = naslovi[indexPath.row]
+            cell.detailTextLabel?.text = "Поминат рок - 30ден."
+            cell.backgroundColor = UIColor.red
+        }else{
+            cell.textLabel?.text = naslovi[indexPath.row]
+            cell.detailTextLabel?.text = "Да се врати до \(krajniDatumi[indexPath.row]) - 15ден."
+        }
+        
+        
+        
 
         return cell
+    }
+    
+    func updateTable(){
+        self.naslovi.removeAll()
+        self.objectIds.removeAll()
+        self.krajniDatumi.removeAll()
+        self.statusi.removeAll()
+        
+        let query = PFQuery(className: "Iznajmuvanje")
+        
+        query.whereKey("citatelId", equalTo: citatelId)
+        query.findObjectsInBackground { (objects, error) in
+            if let err = error {
+                print(err.localizedDescription)
+            }else if let izn = objects{
+                for iznajmuvanje in izn{
+                    if let knigaId = iznajmuvanje["knigaId"] as? String{
+                        self.statusi.append(iznajmuvanje["status"] as! String)
+                        self.objectIds.append(iznajmuvanje.objectId!)
+                        self.krajniDatumi.append(iznajmuvanje["datumZaVrakjanje"] as! String)
+                        
+                        let kniga = PFQuery(className: "Kniga")
+                        kniga.getObjectInBackground(withId: knigaId, block: { (object, error) in
+                            if let err = error{
+                                print(err.localizedDescription)
+                            }else if let kniga = object{
+                                self.naslovi.append(kniga["naslov"] as! String)
+                                self.tableView.reloadData()
+                            }
+                        })
+                    }
+                }
+            }
+        }
     }
  
 

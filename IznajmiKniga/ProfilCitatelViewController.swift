@@ -21,6 +21,8 @@ class ProfilCitatelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        
+        
         let user = PFUser.current()
         nameLabel.text = user!["name"] as? String
         emailLabel.text = user?.email
@@ -32,6 +34,7 @@ class ProfilCitatelViewController: UIViewController {
         myBackButton.title = "Назад"
         navigationItem.backBarButtonItem = myBackButton
     }
+   
     
     @IBAction func odjaviSe(_ sender: Any) {
         PFUser.logOut()
