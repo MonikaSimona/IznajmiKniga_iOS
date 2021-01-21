@@ -35,7 +35,7 @@ class ListaNasloviTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
+        
         cell.textLabel?.text = naslovi[indexPath.row]
         cell.detailTextLabel?.text = avtori[indexPath.row]
       
@@ -44,22 +44,37 @@ class ListaNasloviTableViewController: UITableViewController {
     }
  
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            let objectId = objectIds[indexPath.row]
-            naslovi.remove(at: indexPath.row)
-            avtori.remove(at: indexPath.row)
-            objectIds.remove(at: indexPath.row)
-            let deleteQuery = PFQuery(className: "Kniga")
-            deleteQuery.getObjectInBackground(withId: objectId) { (kniga, error) in
-                if let err = error {
-                    print(err.localizedDescription)
-                }else if let kniga = kniga  {
-                    kniga.deleteInBackground()
-                
+        let knigaId = objectIds[indexPath.row]
+        let query = PFQuery(className: "Iznajmuvanje")
+        query.whereKey("knigaId", equalTo: knigaId)
+        query.getFirstObjectInBackground { (object, error) in
+            if let err = error {
+                print(err.localizedDescription)
+            }else if let iznajmuvanje = object {
+                if let status = iznajmuvanje["status"] as? String{
+                    if  status != "iznajmeno" && status != "pominat_rok"{
+                        if editingStyle == .delete{
+                            let objectId = self.objectIds[indexPath.row]
+                            self.naslovi.remove(at: indexPath.row)
+                            self.avtori.remove(at: indexPath.row)
+                            self.objectIds.remove(at: indexPath.row)
+                            let deleteQuery = PFQuery(className: "Kniga")
+                            deleteQuery.getObjectInBackground(withId: objectId) { (kniga, error) in
+                                if let err = error {
+                                    print(err.localizedDescription)
+                                }else if let kniga = kniga  {
+                                    kniga.deleteInBackground()
+                                    
+                                }
+                            }
+                            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.bottom)
+                        }
+                    }
                 }
             }
-            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.bottom)
         }
+        
+      
         
     }
     

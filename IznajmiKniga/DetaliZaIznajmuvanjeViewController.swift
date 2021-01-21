@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class DetaliZaIznajmuvanjeViewController: UIViewController {
 
@@ -18,11 +19,31 @@ class DetaliZaIznajmuvanjeViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    var index:Int = 0
+    var objectId: String = ""
+    var name:String = ""
+    var email: String = ""
+    var phone: String = ""
+    var naslov: String = ""
+    var author: String = ""
+    var date: String = ""
+    var status: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("index \(index)")
-        // Do any additional setup after loading the view.
+        print("objId \(objectId)")
+        nameLabel.text = name
+        emailLabel.text = email
+        phoneLabel.text = phone
+        authorLabel.text = author
+        titleLabel.text = naslov
+        dateLabel.text = date
+        if status == "iznajmeno"{
+            statusLabel.text = "изнајмено"
+        }else if status == "vrateno"{
+            statusLabel.text = "вратено"
+        }else {
+            statusLabel.text = "доцни со враќање"
+        }
+        
     }
     
 
