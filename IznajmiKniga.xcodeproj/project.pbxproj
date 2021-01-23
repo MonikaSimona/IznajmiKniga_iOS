@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9E3538E93C0C77B5559EDEA5 /* Pods_IznajmiKniga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAB5B352FA602788B0353F1 /* Pods_IznajmiKniga.framework */; };
-		F4129F8725B1AF9800A11189 /* KnigiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8625B1AF9800A11189 /* KnigiCollectionViewController.swift */; };
 		F4129F8925B1B4BC00A11189 /* IznajmuvanjaCitatelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8825B1B4BC00A11189 /* IznajmuvanjaCitatelTableViewController.swift */; };
 		F4129F8B25B1B82B00A11189 /* DetaliZaKnigaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8A25B1B82B00A11189 /* DetaliZaKnigaViewController.swift */; };
 		F4129F8D25B3044E00A11189 /* DodadiKnigaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8C25B3044E00A11189 /* DodadiKnigaViewController.swift */; };
 		F4129F8F25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F8E25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift */; };
 		F4129F9125B5A36100A11189 /* ListaNasloviTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F9025B5A36100A11189 /* ListaNasloviTableViewController.swift */; };
-		F4129F9325B6EDEA00A11189 /* KnigaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F9225B6EDEA00A11189 /* KnigaCollectionViewCell.swift */; };
 		F4129F9525BC2CCF00A11189 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F9425BC2CCF00A11189 /* DataCollectionViewCell.swift */; };
 		F4129F9725BC2DA900A11189 /* BooksCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4129F9625BC2DA900A11189 /* BooksCollectionViewController.swift */; };
 		F42FBFCB25ADAACE00106681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FBFCA25ADAACE00106681 /* AppDelegate.swift */; };
@@ -30,13 +28,11 @@
 		8CA3C676B2406372CD69A197 /* Pods-IznajmiKniga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IznajmiKniga.release.xcconfig"; path = "Target Support Files/Pods-IznajmiKniga/Pods-IznajmiKniga.release.xcconfig"; sourceTree = "<group>"; };
 		D806D7D2CC11B32F57C8839B /* Pods-IznajmiKniga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IznajmiKniga.debug.xcconfig"; path = "Target Support Files/Pods-IznajmiKniga/Pods-IznajmiKniga.debug.xcconfig"; sourceTree = "<group>"; };
 		DBAB5B352FA602788B0353F1 /* Pods_IznajmiKniga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IznajmiKniga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4129F8625B1AF9800A11189 /* KnigiCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnigiCollectionViewController.swift; sourceTree = "<group>"; };
 		F4129F8825B1B4BC00A11189 /* IznajmuvanjaCitatelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IznajmuvanjaCitatelTableViewController.swift; sourceTree = "<group>"; };
 		F4129F8A25B1B82B00A11189 /* DetaliZaKnigaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaliZaKnigaViewController.swift; sourceTree = "<group>"; };
 		F4129F8C25B3044E00A11189 /* DodadiKnigaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DodadiKnigaViewController.swift; sourceTree = "<group>"; };
 		F4129F8E25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaliZaIznajmuvanjeViewController.swift; sourceTree = "<group>"; };
 		F4129F9025B5A36100A11189 /* ListaNasloviTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaNasloviTableViewController.swift; sourceTree = "<group>"; };
-		F4129F9225B6EDEA00A11189 /* KnigaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnigaCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4129F9425BC2CCF00A11189 /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4129F9625BC2DA900A11189 /* BooksCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewController.swift; sourceTree = "<group>"; };
 		F42FBFC725ADAACE00106681 /* IznajmiKniga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IznajmiKniga.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,9 +102,7 @@
 				F42FBFCE25ADAACE00106681 /* Main.storyboard */,
 				F4129F8C25B3044E00A11189 /* DodadiKnigaViewController.swift */,
 				F4129F8E25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift */,
-				F4129F8625B1AF9800A11189 /* KnigiCollectionViewController.swift */,
 				F4129F9025B5A36100A11189 /* ListaNasloviTableViewController.swift */,
-				F4129F9225B6EDEA00A11189 /* KnigaCollectionViewCell.swift */,
 				F42FBFE625B05C0200106681 /* IznajmuvanjaBibliotekarTableViewController.swift */,
 				F4129F8825B1B4BC00A11189 /* IznajmuvanjaCitatelTableViewController.swift */,
 				F4129F9425BC2CCF00A11189 /* DataCollectionViewCell.swift */,
@@ -237,7 +231,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4129F8D25B3044E00A11189 /* DodadiKnigaViewController.swift in Sources */,
-				F4129F8725B1AF9800A11189 /* KnigiCollectionViewController.swift in Sources */,
 				F4129F8F25B30E9000A11189 /* DetaliZaIznajmuvanjeViewController.swift in Sources */,
 				F42FBFCD25ADAACE00106681 /* ViewController.swift in Sources */,
 				F4129F9525BC2CCF00A11189 /* DataCollectionViewCell.swift in Sources */,
@@ -248,7 +241,6 @@
 				F42FBFCB25ADAACE00106681 /* AppDelegate.swift in Sources */,
 				F4129F8925B1B4BC00A11189 /* IznajmuvanjaCitatelTableViewController.swift in Sources */,
 				F42FBFE925B05C8F00106681 /* ProfilCitatelViewController.swift in Sources */,
-				F4129F9325B6EDEA00A11189 /* KnigaCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
