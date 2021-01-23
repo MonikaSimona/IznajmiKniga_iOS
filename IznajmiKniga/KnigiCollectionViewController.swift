@@ -13,6 +13,7 @@ private let reuseIdentifier = "Cell"
 
 class KnigiCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
     var naslovi = [String]()
+    var avtori = [String] ()
     var imageFiles = [PFFileObject]()
     var objectIds = [String]()
 
@@ -102,12 +103,15 @@ class KnigiCollectionViewController: UICollectionViewController,UICollectionView
             if let cell = sender as? UICollectionViewCell, let index = collectionView.indexPath(for: cell){
                 let destSeg = segue.destination as! DetaliZaKnigaViewController
                 destSeg.objectId = objectIds[index.row]
+                destSeg.author = avtori[index.row]
+                destSeg.naslovKniga = naslovi[index.row]
             }
         }
     }
     
     func updateCollection(){
         self.naslovi.removeAll()
+        self.avtori.removeAll()
         self.imageFiles.removeAll()
         self.objectIds.removeAll()
         
@@ -118,6 +122,7 @@ class KnigiCollectionViewController: UICollectionViewController,UICollectionView
             }else if let knigi = objects{
                 for kniga in knigi{
                     self.naslovi.append(kniga["naslov"] as! String)
+                    self.avtori.append(kniga["avtor"] as! String)
                     self.imageFiles.append(kniga["imageFile"] as! PFFileObject)
                     self.objectIds.append(kniga.objectId!)
                     self.collectionView.reloadData()

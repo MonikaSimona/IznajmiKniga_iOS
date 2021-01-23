@@ -71,22 +71,30 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
                 cell.textLabel!.text = citatel["name"] as? String
             }
     })
+        cell.detailTextLabel?.text = naslovi[indexPath.row]
         
-        let knigaQuery = PFQuery(className: "Kniga")
-        knigaQuery.getObjectInBackground(withId: naslovi[indexPath.row], block: { (object, error) in
-            if let err = error {
-                print(err.localizedDescription)
-            }else if let kniga = object{
-                if let title = kniga["naslov"] as? String{
-                    self.titles.append(title)
-                }else {
-                    self.titles.append("не постои")
-                }
-                
-                self.avtori.append(kniga["avtor"] as! String)
-                cell.detailTextLabel!.text = kniga["naslov"] as? String
-            }
-        })
+//        let knigaQuery = PFQuery(className: "Kniga")
+//        knigaQuery.getObjectInBackground(withId: naslovi[indexPath.row], block: { (object, error) in
+//            if let err = error {
+//                print(err.localizedDescription)
+//            }else if let kniga = object{
+//                if let title = kniga["naslov"] as? String{
+//                    self.titles.append(title)
+//                    cell.detailTextLabel!.text = title
+//                }else {
+//                    self.titles.append("не постои")
+//                    cell.detailTextLabel!.text = "не постои"
+//                }
+//                if let avtor = kniga["avtor"] as? String{
+//                    self.avtori.append(avtor)
+//                }else {
+//                    self.avtori.append("не постои")
+//                }
+//
+//
+//
+//            }
+//        })
         
         
         
@@ -107,7 +115,7 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
                 let detaliIznajmuvanje = segue.destination as! DetaliZaIznajmuvanjeViewController
                 detaliIznajmuvanje.objectId = objectIds[index]
                 detaliIznajmuvanje.name = names[index]
-                detaliIznajmuvanje.naslov = titles[index]
+                detaliIznajmuvanje.naslov = naslovi[index]
                 detaliIznajmuvanje.author = avtori[index]
                 detaliIznajmuvanje.date = datumi[index]
                 detaliIznajmuvanje.email = emails[index]
@@ -141,7 +149,8 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
                     self.datumi.append(iznjamuvanje["datumIznajmeno"] as! String)
                     self.statusi.append(iznjamuvanje["status"] as! String)
                     self.citateli.append(iznjamuvanje["citatelId"] as! String)
-                    self.naslovi.append(iznjamuvanje["knigaId"] as! String)
+                    self.naslovi.append(iznjamuvanje["naslov"] as! String)
+                    self.avtori.append(iznjamuvanje["avtor"] as! String)
 //                    if let knigaId = iznjamuvanje["knigaId"] as? String{
 //                        let knigaQuery = PFQuery(className: "Kniga")
 //                        knigaQuery.getObjectInBackground(withId: knigaId, block: { (object, error) in

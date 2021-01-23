@@ -19,6 +19,8 @@ class DetaliZaKnigaViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var objectId: String = ""
+    var naslovKniga: String = ""
+    var author: String = ""
     var citatelId: String = ""
     var iznajmi = true
     override func viewDidLoad() {
@@ -89,6 +91,8 @@ class DetaliZaKnigaViewController: UIViewController {
             let dateStringInTwoWeeks = dateFormatter.string(from: dateInTwoWeeks!)
             
             iznajmuvanje["knigaId"] = objectId
+            iznajmuvanje["naslov"] = naslovKniga
+            iznajmuvanje["avtor"] = author
             iznajmuvanje["citatelId"] = citatelId
             iznajmuvanje["status"] = "iznajmeno"
             iznajmuvanje["datumIznajmeno"] = dateStringNow

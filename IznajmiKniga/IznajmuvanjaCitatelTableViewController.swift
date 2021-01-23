@@ -11,6 +11,7 @@ import Parse
 
 class IznajmuvanjaCitatelTableViewController: UITableViewController {
     var naslovi = [String]()
+    var avtori =  [String]()
     var objectIds = [String]()
     var krajniDatumi = [String]()
     var statusi = [String]()
@@ -79,21 +80,13 @@ class IznajmuvanjaCitatelTableViewController: UITableViewController {
                 print(err.localizedDescription)
             }else if let izn = objects{
                 for iznajmuvanje in izn{
-                    if let knigaId = iznajmuvanje["knigaId"] as? String{
-                        self.statusi.append(iznajmuvanje["status"] as! String)
-                        self.objectIds.append(iznajmuvanje.objectId!)
-                        self.krajniDatumi.append(iznajmuvanje["datumZaVrakjanje"] as! String)
-                        
-                        let kniga = PFQuery(className: "Kniga")
-                        kniga.getObjectInBackground(withId: knigaId, block: { (object, error) in
-                            if let err = error{
-                                print(err.localizedDescription)
-                            }else if let kniga = object{
-                                self.naslovi.append(kniga["naslov"] as! String)
-                                self.tableView.reloadData()
-                            }
-                        })
-                    }
+                    self.statusi.append(iznajmuvanje["status"] as! String)
+                    self.objectIds.append(iznajmuvanje.objectId!)
+                    self.krajniDatumi.append(iznajmuvanje["datumZaVrakjanje"] as! String)
+                    self.naslovi.append(iznajmuvanje["naslov"] as! String)
+                    self.avtori.append(iznajmuvanje["avtor"] as! String)
+                    self.tableView.reloadData()
+                    
                 }
             }
         }

@@ -338,7 +338,7 @@
                             <color key="tintColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="konKnigi:" destination="Nb8-kH-fUE" id="Yr8-Yi-Ugk"/>
-                                <segue destination="Zkl-3F-f7z" kind="show" identifier="siteKnigi" id="gfN-Te-gDR"/>
+                                <segue destination="jqN-6F-uzI" kind="show" identifier="siteKnigi" id="mz3-Tk-pGw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -403,6 +403,141 @@
             </objects>
             <point key="canvasLocation" x="1226" y="-637"/>
         </scene>
+        <!--Books Collection View Controller-->
+        <scene sceneID="wL1-bj-W1U">
+            <objects>
+                <viewController id="jqN-6F-uzI" customClass="BooksCollectionViewController" customModule="IznajmiKniga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LGM-ru-JwV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Внеси збор" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQb-D2-ani">
+                                <rect key="frame" x="10" y="79" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0O7-Gi-oKZ">
+                                <rect key="frame" x="122" y="141" width="76" height="30"/>
+                                <color key="backgroundColor" red="0.58446134520000004" green="0.62609191230000005" blue="0.37285682869999998" alpha="0.34383855569999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title=" Пребарај "/>
+                                <connections>
+                                    <action selector="prebarajNaslov:" destination="jqN-6F-uzI" eventType="touchUpInside" id="ADe-jK-Orn"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LXv-b0-r9M">
+                                <rect key="frame" x="0.0" y="179" width="320" height="389"/>
+                                <color key="backgroundColor" red="0.92701745030000005" green="0.98882669209999996" blue="0.59432441000000003" alpha="0.92463077910000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LOh-JB-Y3J">
+                                    <size key="itemSize" width="145" height="285"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="X7o-aV-kpt" customClass="DataCollectionViewCell" customModule="IznajmiKniga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="285"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="285"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iSG-QY-6AO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="227"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="227" id="0FN-By-fHc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-5u-Rws">
+                                                    <rect key="frame" x="0.0" y="224" width="145" height="61"/>
+                                                    <color key="backgroundColor" red="0.58446134520000004" green="0.62609191230000005" blue="0.37285682869999998" alpha="0.34383855570410954" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="61" id="RNc-Ox-JzU"/>
+                                                        <constraint firstAttribute="width" constant="145" id="p56-yR-Czo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.93104833364486694" green="0.98883134126663208" blue="0.59036368131637573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="iSG-QY-6AO" firstAttribute="leading" secondItem="X7o-aV-kpt" secondAttribute="leading" id="Ac6-XU-fmM"/>
+                                            <constraint firstItem="4a2-5u-Rws" firstAttribute="leading" secondItem="X7o-aV-kpt" secondAttribute="leading" id="LbM-ZC-5P6"/>
+                                            <constraint firstAttribute="trailing" secondItem="4a2-5u-Rws" secondAttribute="trailing" id="Y2y-K9-eB5"/>
+                                            <constraint firstAttribute="bottom" secondItem="4a2-5u-Rws" secondAttribute="bottom" id="Ziw-mT-DQj"/>
+                                            <constraint firstItem="4a2-5u-Rws" firstAttribute="top" secondItem="iSG-QY-6AO" secondAttribute="bottom" constant="-3" id="adg-tN-d3h"/>
+                                            <constraint firstItem="iSG-QY-6AO" firstAttribute="top" secondItem="X7o-aV-kpt" secondAttribute="top" id="bkR-FE-Tfl"/>
+                                            <constraint firstItem="4a2-5u-Rws" firstAttribute="top" secondItem="iSG-QY-6AO" secondAttribute="bottom" constant="-3" id="fiT-w3-sy9"/>
+                                            <constraint firstAttribute="trailing" secondItem="iSG-QY-6AO" secondAttribute="trailing" id="sEb-6K-5tf"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="BookImage" destination="iSG-QY-6AO" id="Nra-az-e8h"/>
+                                            <outlet property="BookTitle" destination="4a2-5u-Rws" id="Kkh-3g-Shx"/>
+                                            <segue destination="FTh-NR-nTx" kind="show" identifier="detali" id="WU0-ZZ-aRs"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="jqN-6F-uzI" id="oVk-U0-xgG"/>
+                                    <outlet property="delegate" destination="jqN-6F-uzI" id="CcT-fQ-FSg"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bB9-lM-alN">
+                                <rect key="frame" x="90" y="107" width="45" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="*автор">
+                                    <color key="titleShadowColor" red="0.93104833360000006" green="0.98883134130000006" blue="0.59036368130000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="poAvtor:" destination="jqN-6F-uzI" eventType="touchUpInside" id="oks-Ki-wIr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deo-Zz-khi">
+                                <rect key="frame" x="176" y="107" width="54" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="*наслов">
+                                    <color key="titleShadowColor" red="0.93104833360000006" green="0.98883134130000006" blue="0.59036368130000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="poNaslov:" destination="jqN-6F-uzI" eventType="touchUpInside" id="fIY-7D-O4W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92320865392684937" green="0.98107713460922241" blue="0.58646309375762939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bB9-lM-alN" firstAttribute="leading" secondItem="p6e-Bo-hod" secondAttribute="leading" constant="90" id="DGl-ul-Uml"/>
+                            <constraint firstItem="LXv-b0-r9M" firstAttribute="bottom" secondItem="p6e-Bo-hod" secondAttribute="bottom" id="Lur-CO-Eoh"/>
+                            <constraint firstItem="0O7-Gi-oKZ" firstAttribute="top" secondItem="bB9-lM-alN" secondAttribute="bottom" constant="5" id="PVv-Af-I9W"/>
+                            <constraint firstItem="LXv-b0-r9M" firstAttribute="leading" secondItem="p6e-Bo-hod" secondAttribute="leading" id="QxQ-i6-WGR"/>
+                            <constraint firstItem="LXv-b0-r9M" firstAttribute="top" secondItem="0O7-Gi-oKZ" secondAttribute="bottom" constant="8" id="Yuh-7d-udj"/>
+                            <constraint firstItem="p6e-Bo-hod" firstAttribute="trailing" secondItem="rQb-D2-ani" secondAttribute="trailing" constant="10" id="ZNh-Qj-KoD"/>
+                            <constraint firstItem="rQb-D2-ani" firstAttribute="top" secondItem="p6e-Bo-hod" secondAttribute="top" constant="15" id="bhl-G6-OUj"/>
+                            <constraint firstItem="rQb-D2-ani" firstAttribute="leading" secondItem="p6e-Bo-hod" secondAttribute="leading" constant="10" id="cN1-cu-MRn"/>
+                            <constraint firstItem="LXv-b0-r9M" firstAttribute="trailing" secondItem="p6e-Bo-hod" secondAttribute="trailing" id="ofj-GO-ILc"/>
+                            <constraint firstItem="p6e-Bo-hod" firstAttribute="trailing" secondItem="deo-Zz-khi" secondAttribute="trailing" constant="90" id="vlh-gb-jkz"/>
+                            <constraint firstItem="bB9-lM-alN" firstAttribute="top" secondItem="rQb-D2-ani" secondAttribute="bottom" constant="-2" id="wyO-uR-fcc"/>
+                            <constraint firstItem="0O7-Gi-oKZ" firstAttribute="centerX" secondItem="LGM-ru-JwV" secondAttribute="centerX" id="yl3-9E-LiX"/>
+                            <constraint firstItem="deo-Zz-khi" firstAttribute="top" secondItem="rQb-D2-ani" secondAttribute="bottom" constant="-2" id="zrM-cB-aJA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p6e-Bo-hod"/>
+                    </view>
+                    <connections>
+                        <outlet property="avtorButton" destination="bB9-lM-alN" id="myZ-O6-YYu"/>
+                        <outlet property="collectionView" destination="LXv-b0-r9M" id="mKQ-Xy-7UX"/>
+                        <outlet property="naslovButton" destination="deo-Zz-khi" id="9dc-UB-57s"/>
+                        <outlet property="prebarajButton" destination="0O7-Gi-oKZ" id="3Bk-e3-B2Z"/>
+                        <outlet property="titleTextField" destination="rQb-D2-ani" id="yss-gF-ihT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWb-WS-ljo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2010" y="-630.63380281690138"/>
+        </scene>
         <!--Knigi Collection View Controller-->
         <scene sceneID="kCD-w6-6VD">
             <objects>
@@ -453,7 +588,6 @@
                                 <connections>
                                     <outlet property="knigaImage" destination="cXU-ey-uRP" id="dEs-g3-4pd"/>
                                     <outlet property="naslov" destination="vaE-ZC-MRx" id="Nm7-la-Bt9"/>
-                                    <segue destination="FTh-NR-nTx" kind="show" identifier="detaliZaKniga" id="MOd-z4-GeA"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
