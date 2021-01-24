@@ -18,9 +18,12 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
     var emails = [String]()
     var avtori = [String]()
     var datumi = [String]()
+    var krajniDatumi = [String] ()
     var statusi = [String]()
     var naslovi = [String]()
     var objectIds = [String]()
+    var pominat_rok = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +61,20 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let endDateString = krajniDatumi[indexPath.row]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let endDate = dateFormatter.date(from:endDateString)!
+        
+        let dateNow = Date()
+        
+        if endDate < dateNow {
+            pominat_rok = true
+        }
+        
 
         let citatelQuery = PFUser.query()
         citatelQuery?.getObjectInBackground(withId: citateli[indexPath.row], block: { (object, error) in
@@ -73,34 +90,8 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
     })
         cell.detailTextLabel?.text = naslovi[indexPath.row]
         
-//        let knigaQuery = PFQuery(className: "Kniga")
-//        knigaQuery.getObjectInBackground(withId: naslovi[indexPath.row], block: { (object, error) in
-//            if let err = error {
-//                print(err.localizedDescription)
-//            }else if let kniga = object{
-//                if let title = kniga["naslov"] as? String{
-//                    self.titles.append(title)
-//                    cell.detailTextLabel!.text = title
-//                }else {
-//                    self.titles.append("не постои")
-//                    cell.detailTextLabel!.text = "не постои"
-//                }
-//                if let avtor = kniga["avtor"] as? String{
-//                    self.avtori.append(avtor)
-//                }else {
-//                    self.avtori.append("не постои")
-//                }
-//
-//
-//
-//            }
-//        })
-        
-        
-        
-//        cell.textLabel?.text = citateli[indexPath.row]
-//        print(naslovi[indexPath.row])
-//        cell.detailTextLabel?.text = naslovi[indexPath.row]
+
+
 
         return cell
     }
@@ -120,7 +111,12 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
                 detaliIznajmuvanje.date = datumi[index]
                 detaliIznajmuvanje.email = emails[index]
                 detaliIznajmuvanje.phone = telefoni[index]
-                detaliIznajmuvanje.status = statusi[index]
+                if pominat_rok{
+                    detaliIznajmuvanje.status = "поминат рок"
+                }else{
+                    detaliIznajmuvanje.status = statusi[index]
+                }
+                
                 
                 
                 
@@ -137,6 +133,7 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
         self.avtori.removeAll()
         self.datumi.removeAll()
         self.statusi.removeAll()
+        self.krajniDatumi.removeAll()
         
         let query = PFQuery(className: "Iznajmuvanje")
         query.findObjectsInBackground { (objects, error) in
@@ -147,35 +144,12 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
                 for iznjamuvanje in izn{
                     self.objectIds.append(iznjamuvanje.objectId!)
                     self.datumi.append(iznjamuvanje["datumIznajmeno"] as! String)
+                    self.krajniDatumi.append(iznjamuvanje["datumZaVrakjanje"] as! String)
                     self.statusi.append(iznjamuvanje["status"] as! String)
                     self.citateli.append(iznjamuvanje["citatelId"] as! String)
                     self.naslovi.append(iznjamuvanje["naslov"] as! String)
                     self.avtori.append(iznjamuvanje["avtor"] as! String)
-//                    if let knigaId = iznjamuvanje["knigaId"] as? String{
-//                        let knigaQuery = PFQuery(className: "Kniga")
-//                        knigaQuery.getObjectInBackground(withId: knigaId, block: { (object, error) in
-//                            if let err = error {
-//                                print(err.localizedDescription)
-//                            }else if let kniga = object{
-//                                self.naslovi.append(kniga["naslov"] as! String)
-//                                self.avtori.append(kniga["avtor"] as! String)
-//                                self.tableView.reloadData()
-//                            }
-//                        })
-//                        if let citatelId = iznjamuvanje["citatelId"] as? String{
-//                            let citatelQuery = PFUser.query()
-//                            citatelQuery?.getObjectInBackground(withId: citatelId, block: { (object, error) in
-//                                if let err =  error{
-//                                    print(err.localizedDescription)
-//                                }else if let citatel = object as? PFUser{
-//                                    self.citateli.append(citatel["name"] as! String)
-//                                    self.telefoni.append(citatel["phone"] as! String)
-//                                    self.emails.append(citatel.username!.components(separatedBy: "_")[0])
-//                                    self.tableView.reloadData()
-//                                }
-//                            })
-//                        }
-//                    }
+
                     self.tableView.reloadData()
                 }
             }
@@ -183,51 +157,6 @@ class IznajmuvanjaBibliotekarTableViewController: UITableViewController {
     }
    
  
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

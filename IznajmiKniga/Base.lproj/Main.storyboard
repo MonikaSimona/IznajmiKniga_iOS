@@ -280,7 +280,7 @@
                                 </state>
                                 <connections>
                                     <action selector="konIznajmuvanja:" destination="Nb8-kH-fUE" eventType="touchUpInside" id="dx1-tw-Wva"/>
-                                    <segue destination="hlj-rf-7jb" kind="show" identifier="moiIznajmuvanja" id="E3o-eW-bhu"/>
+                                    <segue destination="x5m-6j-ma2" kind="show" identifier="moiIznajmuvanja" id="5Ft-Ix-fRD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -343,6 +343,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="button" destination="4ju-Vz-2BB" id="bK8-XL-ikz"/>
                         <outlet property="emailLabel" destination="rGO-bI-0ag" id="309-g7-ZgC"/>
                         <outlet property="nameLabel" destination="bWJ-rL-qLg" id="wOF-vl-yVC"/>
                         <outlet property="newEmailTextField" destination="0Mf-UZ-mbk" id="JuY-cf-Ccn"/>
@@ -356,33 +357,31 @@
             </objects>
             <point key="canvasLocation" x="420" y="92.957746478873247"/>
         </scene>
-        <!--Iznajmuvanja Citatel Table View Controller-->
-        <scene sceneID="acs-TG-yUQ">
+        <!--Moi Iznajmuvanja Table View Controller-->
+        <scene sceneID="n1I-7d-4c6">
             <objects>
-                <tableViewController id="hlj-rf-7jb" customClass="IznajmuvanjaCitatelTableViewController" customModule="IznajmiKniga" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SF0-PY-1vN">
+                <tableViewController id="x5m-6j-ma2" customClass="MoiIznajmuvanjaTableViewController" customModule="IznajmiKniga" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gfh-nb-Vx5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92701745030000005" green="0.98882669209999996" blue="0.59432441000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.57541288859999995" green="0.1772988247" blue="0.12489494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.92451652230000003" green="1" blue="0.59119082430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93104833360000006" green="0.98883134130000006" blue="0.59036368130000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="stO-Du-aNW" detailTextLabel="CTq-Uc-t3o" style="IBUITableViewCellStyleSubtitle" id="Id5-TN-eZN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Dh5-Y8-7Me" detailTextLabel="F4J-MN-qaS" style="IBUITableViewCellStyleSubtitle" id="AOv-tX-TTC">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Id5-TN-eZN" id="Hft-J9-eQ9">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AOv-tX-TTC" id="wcY-K6-WMb">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Koja kniga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="stO-Du-aNW">
-                                            <rect key="frame" x="16" y="5" width="78.5" height="20.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dh5-Y8-7Me">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="datum + cena" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CTq-Uc-t3o">
-                                            <rect key="frame" x="16" y="25.5" width="78" height="14.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F4J-MN-qaS">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -390,18 +389,18 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.92451652230000003" green="1" blue="0.59119082430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.93104833360000006" green="0.98883134130000006" blue="0.59036368130000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="hlj-rf-7jb" id="WL5-2c-hVZ"/>
-                            <outlet property="delegate" destination="hlj-rf-7jb" id="kvI-Rj-MF8"/>
+                            <outlet property="dataSource" destination="x5m-6j-ma2" id="Jm4-f6-znn"/>
+                            <outlet property="delegate" destination="x5m-6j-ma2" id="oBZ-Pu-VXk"/>
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yqx-nh-htF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ezs-1R-Bh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226" y="-637"/>
+            <point key="canvasLocation" x="1223" y="-637"/>
         </scene>
         <!--Books Collection View Controller-->
         <scene sceneID="wL1-bj-W1U">

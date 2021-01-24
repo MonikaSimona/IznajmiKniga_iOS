@@ -11,6 +11,7 @@ import Parse
 
 class ProfilCitatelViewController: UIViewController {
 
+    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -20,7 +21,7 @@ class ProfilCitatelViewController: UIViewController {
     @IBOutlet weak var newPasswordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+    button.layer.cornerRadius = 5
         
         
         let user = PFUser.current()
@@ -99,7 +100,7 @@ class ProfilCitatelViewController: UIViewController {
         
     }
     @IBAction func konIznajmuvanja(_ sender: Any) {
-        performSegue(withIdentifier: "moiIznajmuvanja", sender: self)
+//        performSegue(withIdentifier: "moiIznajmuvanja", sender: self)
     }
     @IBAction func konKnigi(_ sender: Any) {
     }
@@ -107,7 +108,7 @@ class ProfilCitatelViewController: UIViewController {
     func displayAlert(title: String, message: String){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            self.dismiss(animated: true, completion: nil)
+//            self.dismiss(animated: true, completion: nil)
         }))
         present(alertController,animated: true, completion: nil)
     }

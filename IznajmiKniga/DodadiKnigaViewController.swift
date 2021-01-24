@@ -61,31 +61,37 @@ class DodadiKnigaViewController: UIViewController,UIImagePickerControllerDelegat
     
     
     @IBAction func dodadiKniga(_ sender: Any) {
-        if let image = imageView.image{
-            let kniga = PFObject(className: "Kniga")
-            kniga["naslov"] = naslovTextField.text
-            kniga["avtor"] = avtorTekstField.text
-            kniga["sodrzina"] = sodrzinaTextView.text
-            if let imagedata = image.jpeg(.medium){
-                let imageFile = PFFileObject(name: "image.jpg", data: imagedata)
-                kniga["imageFile"] = imageFile
-                let naslov  = naslovTextField.text
-                let avtor = avtorTekstField.text
-                self.avtorTekstField.text = ""
-                self.naslovTextField.text = ""
-                self.sodrzinaTextView.text = ""
-                self.imageView.image = nil
-                kniga.saveInBackground()
-                let messageStirng = "Додадена е '\(naslov ?? "")' од '\(avtor ?? "")'"
-                self.displayAlert(title: "Успешно!", message: messageStirng)
-                
+        
+        if imageView.image != nil && naslovTextField.text != "" && avtorTekstField.text != "" && sodrzinaTextView.text != ""{
+            if let image = imageView.image{
+                let kniga = PFObject(className: "Kniga")
+                kniga["naslov"] = naslovTextField.text
+                kniga["avtor"] = avtorTekstField.text
+                kniga["sodrzina"] = sodrzinaTextView.text
+                if let imagedata = image.jpeg(.medium){
+                    let imageFile = PFFileObject(name: "image.jpg", data: imagedata)
+                    kniga["imageFile"] = imageFile
+                    let naslov  = naslovTextField.text
+                    let avtor = avtorTekstField.text
+                    self.avtorTekstField.text = ""
+                    self.naslovTextField.text = ""
+                    self.sodrzinaTextView.text = ""
+                    self.imageView.image = nil
+                    kniga.saveInBackground()
+                    let messageStirng = "Додадена е '\(naslov ?? "")' од '\(avtor ?? "")'"
+                    self.displayAlert(title: "Успешно!", message: messageStirng)
+                    
+                }
             }
+        }else{
+            displayAlert(title: "Грешка", message: "Пополнете ги сите полиња и додадете слика!")
         }
+      
     }
     func displayAlert(title: String, message: String){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            self.dismiss(animated: true, completion: nil)
+//            self.dismiss(animated: true, completion: nil)
         }))
         present(alertController,animated: true, completion: nil)
     }

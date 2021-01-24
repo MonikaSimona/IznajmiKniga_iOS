@@ -166,7 +166,7 @@ extension BooksCollectionViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let bounds = collectionView.bounds
-        return CGSize(width: bounds.width / 2 - 6, height: bounds.height / 2)
+        return CGSize(width: bounds.width / 2 - 6, height: bounds.height / 1.5)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 6
